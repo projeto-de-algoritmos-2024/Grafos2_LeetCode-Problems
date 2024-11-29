@@ -33,3 +33,16 @@ class Solution:
         distanciasSrc1 = dijkstra(grafoNormal, src1)
         distanciasSrc2 = dijkstra(grafoNormal, src2) 
         distanciasDest = dijkstra(grafoReverso, dest)
+        
+        menorPeso = infinito
+        
+        for no in range(n):
+            if any(distancia[no] == infinito for distancia in [distanciasSrc1, distanciasSrc2, distanciasDest]):
+                continue  
+            pesoTotal = distanciasSrc1[nodo] + distanciasSrc2[nodo] + distanciasDest[nodo]
+            menorPeso = min(menorPeso, pesoTotal)
+
+        if (menorPeso == infinito):
+            return -1
+        else:
+            return menorPeso                
