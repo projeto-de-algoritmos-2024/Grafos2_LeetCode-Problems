@@ -39,7 +39,7 @@ class Solution:
         for no in range(n):
             if any(distancia[no] == infinito for distancia in [distanciasSrc1, distanciasSrc2, distanciasDest]):
                 continue  
-            pesoTotal = distanciasSrc1[nodo] + distanciasSrc2[nodo] + distanciasDest[nodo]
+            pesoTotal = distanciasSrc1[no] + distanciasSrc2[no] + distanciasDest[no]
             menorPeso = min(menorPeso, pesoTotal)
 
         if (menorPeso == infinito):
