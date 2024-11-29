@@ -30,3 +30,6 @@ class Solution:
                         heapq.heappush(filaPrioridade, (novaDistancia, vizinho))
             return distancias
         
+        distanciasSrc1 = dijkstra(grafoNormal, src1)
+        distanciasSrc2 = dijkstra(grafoNormal, src2) 
+        distanciasDest = dijkstra(grafoReverso, dest)
