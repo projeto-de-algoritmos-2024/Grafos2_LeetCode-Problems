@@ -42,7 +42,5 @@ class Solution:
             pesoTotal = distanciasSrc1[no] + distanciasSrc2[no] + distanciasDest[no]
             menorPeso = min(menorPeso, pesoTotal)
 
-        if (menorPeso == infinito):
-            return -1
-        else:
-            return menorPeso                
+        return menorPeso if menorPeso != infinito else -1
+                
