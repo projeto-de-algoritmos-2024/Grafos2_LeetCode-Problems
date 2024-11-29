@@ -18,7 +18,7 @@ Este projeto consiste na realização de exercícios da plataforma de juiz eletr
 |Questão | Nível |
 | -- | -- |
 |  |  Médio |
-|  |  Difícil |
+| [2203. Minimum Weighted Subgraph With the Required Paths](https://leetcode.com/problems/minimum-weighted-subgraph-with-the-required-paths/description/?envType=problem-list-v2&envId=shortest-path) |  Difícil |
 |  |  Difícil |
 
 ## Screenshots
