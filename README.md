@@ -23,6 +23,9 @@ Este projeto consiste na realização de exercícios da plataforma de juiz eletr
 
 ## Screenshots
 
+### 2203. Minimum Weighted Subgraph With the Required Paths
+![Screenshot da questao 2203 aceita](imagens/2203.png)
+
 ## Instalação 
 **Linguagem**: Python<br>
 
