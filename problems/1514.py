@@ -12,9 +12,11 @@ def maxProbability(n: int, edges: list[list[int]], succProb: list[float], start_
         for i in range(n):
             grafo[i] = []
             
-        for e in edges:
-            grafo[e[0]].append((e[1],succProb[edges.index(e)]))
-            grafo[e[1]].append((e[0],succProb[edges.index(e)]))
+        for i in range(len(edges)):
+            u, v = edges[i]
+            prob = succProb[i]
+            grafo[u].append((v, prob))
+            grafo[v].append((u, prob))  
         print(grafo)
         return grafo
     
