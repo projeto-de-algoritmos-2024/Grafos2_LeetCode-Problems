@@ -21,19 +21,20 @@ def maxProbability(n: int, edges: list[list[int]], succProb: list[float], start_
     grafo = cria_grafo(n,edges,succProb)
     
     
-    def dikstra(grafo, origem):
+    def dikstra(grafo, origem,destino):
         
-        probabilidades = {}
-        for no in grafo:
-            probabilidades[no] = float(0)
+        probabilidades = [0] * n
         
-        probabilidades[origem] = 0
+        probabilidades[origem] = 1.0
         
-        heap = [(0,origem)]
+        heap = [(-1.0,origem)]
         
         while heap:
             
             probabilidade_atual, no_atual = heapq.heappop(heap)
+            
+            if no_atual==destino:
+                break
             
             if probabilidade_atual < probabilidades[no_atual]:
                 continue
@@ -49,19 +50,20 @@ def maxProbability(n: int, edges: list[list[int]], succProb: list[float], start_
                 if probabilidade_vizinho > probabilidades[vizinho]:
                     probabilidades[vizinho] = probabilidade_vizinho
                     heapq.heappush(heap, (probabilidade_vizinho,vizinho))
+                    #print(f"vizinho_prob= {vizinho}: {probabilidades[vizinho]}")
 
                 
         return probabilidades
          
-    probabilidades = dikstra(grafo,start_node)
+    probabilidades = dikstra(grafo,start_node,end_node)
     
     print(probabilidades[end_node])
         
 n = 3
 
-edges = [[0,1]]
+edges = [[0,1],[1,2],[0,2]]
 
-succProb = [0.5]
+succProb = [0.5,0.5,0.2]
 
 start_node = 0
 
