@@ -32,32 +32,27 @@ def maxProbability(n: int, edges: list[list[int]], succProb: list[float], start_
         while heap:
             
             probabilidade_atual, no_atual = heapq.heappop(heap)
+            probabilidade_atual = -probabilidade_atual
             
             if no_atual==destino:
-                break
+                return float(probabilidade_atual)
             
             if probabilidade_atual < probabilidades[no_atual]:
                 continue
             
             for vizinho, peso in grafo[no_atual]:
  
-                if no_atual == origem:
-                    probabilidade_vizinho = peso
-                    
-                else:
-                    probabilidade_vizinho = probabilidade_atual * peso
+                probabilidade_vizinho = probabilidade_atual * peso
                 
                 if probabilidade_vizinho > probabilidades[vizinho]:
                     probabilidades[vizinho] = probabilidade_vizinho
-                    heapq.heappush(heap, (probabilidade_vizinho,vizinho))
+                    heapq.heappush(heap, (-probabilidade_vizinho,vizinho))
                     #print(f"vizinho_prob= {vizinho}: {probabilidades[vizinho]}")
 
                 
-        return probabilidades
+        return float(0)
          
-    probabilidades = dikstra(grafo,start_node,end_node)
-    
-    print(probabilidades[end_node])
+    print(dikstra(grafo,start_node,end_node))
         
 n = 3
 
