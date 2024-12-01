@@ -6,7 +6,7 @@
 
 # Given maxTime, edges, and passingFees, return the minimum cost to complete your journey, or -1 if you cannot complete it within maxTime minutes.
 class Solution:
-    def minCost(self, maxTime: int, edges: list[list[int]], passingFees: list[int]) -> int:
+    def minCost(maxTime: int, edges: list[list[int]], passingFees: list[int]) -> int:
         import heapq
         import pprint
         
@@ -36,18 +36,18 @@ class Solution:
         while heap:
             
             custo_atual, no_atual, tempo_atual = heapq.heappop(heap)
-            
+            print(tempos)
             
             if tempo_atual > maxTime:
                 
-                return continue
+                continue
 
             if no_atual == n-1:
                 
                 return custo_atual
 
             for vizinho, tempo in grafo[no_atual]:
-                if tempos[vizinho] == 1001:
+                if tempos[vizinho] == 1001 or vizinho == n-1:
                     tempo_vizinho = tempo_atual + tempo
                     custo_vizinho = custo_atual + passingFees[vizinho]
                     
@@ -55,10 +55,11 @@ class Solution:
                         
                         tempos[vizinho] = tempo_vizinho
                         heapq.heappush(heap,(custo_vizinho,vizinho,tempo_vizinho))
-            
+        
+        return -1 
      
-#maxTime = 30
-#edges = [[0,1,10],[1,2,10],[2,5,10],[0,3,1],[3,4,10],[4,5,15]]
-#passingFees = [5,1,2,20,20,3]
+maxTime = 29
+edges = [[0,1,10],[1,2,10],[2,5,10],[0,3,1],[3,4,10],[4,5,15]]
+passingFees = [5,1,2,20,20,3]
 
-#print(Solution.minCost(maxTime=maxTime,edges=edges,passingFees=passingFees))
+print(Solution.minCost(maxTime=maxTime,edges=edges,passingFees=passingFees))
