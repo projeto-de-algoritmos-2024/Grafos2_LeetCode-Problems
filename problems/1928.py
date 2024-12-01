@@ -50,8 +50,8 @@ def minCost(maxTime: int, edges: list[list[int]], passingFees: list[int]) -> int
             custo_vizinho = custo_atual + passingFees[vizinho]
             
             if tempo_atual < tempos[vizinho]:
-                tempos[vizinho] = tempo_atual
-                heapq.heappush(heap,(tempo_atual,vizinho,custo_vizinho))
+                tempos[vizinho] = tempo_vizinho
+                heapq.heappush(heap,(tempo_vizinho,vizinho,custo_vizinho))
     
      
 maxTime = 30
