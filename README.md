@@ -19,15 +19,18 @@ Este projeto consiste na realização de exercícios da plataforma de juiz eletr
 | -- | -- |
 | [1514. Path with maximum probability](https://leetcode.com/problems/path-with-maximum-probability/description/?envType=problem-list-v2&envId=graph) |  Médio |
 | [2203. Minimum Weighted Subgraph With the Required Paths](https://leetcode.com/problems/minimum-weighted-subgraph-with-the-required-paths/description/?envType=problem-list-v2&envId=shortest-path) |  Difícil |
-|  |  Difícil |
+| [1928. Minimum Cost to Reach Destination in Time](https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/description/?envType=problem-list-v2&envId=graph) |  Difícil |
 
 ## Screenshots
 
 ### 1514. Path with maximum probability
-![Screenshot da questao 2203 aceita](imagens/1514.png)
+![Screenshot da questao 1514 aceita](imagens/1514.png)
 
 ### 2203. Minimum Weighted Subgraph With the Required Paths
 ![Screenshot da questao 2203 aceita](imagens/2203.png)
+
+### 1928. Minimum Cost to Reach Destination in Time
+![Screenshot da questao 1928 aceita](imagens/1928.png)
 
 ## Instalação 
 **Linguagem**: Python<br>
