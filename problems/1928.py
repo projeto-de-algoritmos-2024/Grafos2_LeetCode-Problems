@@ -29,7 +29,7 @@ def minCost(maxTime: int, edges: list[list[int]], passingFees: list[int]) -> int
     
     grafo = cria_grafo(n, edges)
     
-    tempos = [0] * n
+    tempos = [int('inf')] * n
     
     heap = [(0, 0, passingFees[0])] #(tempo, no, custo)
     
@@ -37,19 +37,23 @@ def minCost(maxTime: int, edges: list[list[int]], passingFees: list[int]) -> int
         
         tempo_atual, no_atual, custo_atual = heapq.heappop(heap)
         
-        
+        print(f"tempo atual = {tempo_atual} no atual = {no_atual} custo atual = {custo_atual}")
         
         if tempo_atual > maxTime:
+            print('primeiro return')
             return -1
 
         if no_atual == n-1:
+            print('segundo return')
             return custo_atual
 
         for vizinho, tempo in grafo[no_atual]:
+            print('aaa')
             tempo_vizinho = tempo_atual + tempo
             custo_vizinho = custo_atual + passingFees[vizinho]
             
-            if tempo_atual < tempos[vizinho]:
+            if tempo_vizinho < tempos[vizinho]:
+                
                 tempos[vizinho] = tempo_vizinho
                 heapq.heappush(heap,(tempo_vizinho,vizinho,custo_vizinho))
     
@@ -58,4 +62,4 @@ maxTime = 30
 edges = [[0,1,10],[1,2,10],[2,5,10],[0,3,1],[3,4,10],[4,5,15]]
 passingFees = [5,1,2,20,20,3]
 
-print(minCost(maxTime=maxTime,edges=edges,passingFees=passingFees))
+minCost(maxTime=maxTime,edges=edges,passingFees=passingFees)
